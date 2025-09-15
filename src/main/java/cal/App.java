@@ -5,13 +5,18 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 
 import com.sun.net.httpserver.HttpServer;
+
+import cal.info.controller.ControllerHackathon;
+
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
 
 public class App {
     public static void main(String[] args) throws IOException {
     // Création du serveur HTTP qui écoutera sur le port 8000
-    HttpServer serveur = HttpServer.create(new InetSocketAddress(8080), 0);
+    HttpServer serveur = HttpServer.create(new InetSocketAddress(8090), 0);
+
+    serveur.createContext("/hackathons", new ControllerHackathon());
 
     // Première route "/accueil" :
     serveur.createContext("/accueil", new HttpHandler() {
@@ -21,7 +26,7 @@ public class App {
                 echange.sendResponseHeaders(200, response.length());
                 OutputStream os = echange.getResponseBody();
                 os.write(response.getBytes());
-                os.close();
+                os.close(); 
             }
         });
 
