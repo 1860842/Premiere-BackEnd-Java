@@ -17,7 +17,7 @@ public class ControllerHackathon implements HttpHandler {
     @Override
     public void handle(HttpExchange echange) throws IOException {
 
-        String response = "Bienvenue au contrôle des hackathons !";
+        String response = "Bienvenue au controle des hackathons !";
 
         echange.sendResponseHeaders(200, response.length());
         OutputStream os = echange.getResponseBody();
