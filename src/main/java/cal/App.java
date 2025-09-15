@@ -6,6 +6,7 @@ import java.net.InetSocketAddress;
 
 import com.sun.net.httpserver.HttpServer;
 
+import cal.info.controller.ControllerEtudiant;
 import cal.info.controller.ControllerHackathon;
 
 import com.sun.net.httpserver.HttpHandler;
@@ -17,6 +18,7 @@ public class App {
     HttpServer serveur = HttpServer.create(new InetSocketAddress(8090), 0);
 
     serveur.createContext("/hackathons", new ControllerHackathon());
+    serveur.createContext("/etudiants", new ControllerEtudiant());
 
     // Première route "/accueil" :
     serveur.createContext("/accueil", new HttpHandler() {
