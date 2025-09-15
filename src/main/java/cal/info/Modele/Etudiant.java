@@ -1,12 +1,16 @@
+package cal.info.Modele;
+
+import java.util.List;
+
 public class Etudiant {
     private String nomEtudant;
     private int ageEtudiant;
     private double noteEtudiant;
 
-    public Etudiant(String nom,int ageEtudiant,double noteEtudiant){
-        this.nomEtudant=nom;
-        this.ageEtudiant=ageEtudiant;
-        this.noteEtudiant=noteEtudiant;
+    public Etudiant(String nom, int ageEtudiant, double noteEtudiant){
+        this.nomEtudant = nom;
+        this.ageEtudiant = ageEtudiant;
+        this.noteEtudiant = noteEtudiant;
     }
 
     public String obtenirNom() {
@@ -20,6 +24,11 @@ public class Etudiant {
     public double obtenirNote() {
         return noteEtudiant;
     }
+    
     public void ajouterPreferenceHackathon(Hackathon h) {}
+
+    public List<Hackathon> afficherPreferences(){
+        return null;
+    }
 
 }
