@@ -1,4 +1,4 @@
-package cal.info.Modele;
+package cal.info.modele;
 
 import java.sql.Date;
 
